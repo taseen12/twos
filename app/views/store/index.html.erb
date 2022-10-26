@@ -1,10 +1,18 @@
 <% if notice %>
   <aside id="notice"><%= notice %></aside>
 <% end %>
-<h1>Your Pragmatic Catalog</h1>
-<ul class="catalog">
+<h1> Rent a car </h1>
+
+  <p> you have visited this site <%= pluralize @visit_count,'time' %></p>
+
   <% @products.each do |product| %>
-    <li>
+    <div class="container">
+      <div class="container-fluid mt-3">
+        <div class="row">
+
+
+
+        <li>
       <%= image_tag(product.image_url) %>
       <h2><%= product.title %></h2>
       <p>
@@ -18,14 +26,17 @@
       <div class="quantity">
         <p>Quantity :  <%=  product.quantity %></p>
       </div>
-      <% if product.quantity > 0 %>
+      <% if product.quantity > 0  %>
       <%= link_to 'Rent', new_order_path(product_id: product) %>
+
       <% else %>
         <%=  'not avaliable' %>
        <% end %>
+            <% end %>
 
 
     </li>
-  <% end %>
-  <%= link_to 'MY ORDER', my_order_index_path %>
-</ul>
+        </div></div></div>
+
+
+

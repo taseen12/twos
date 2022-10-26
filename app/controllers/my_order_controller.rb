@@ -21,7 +21,8 @@ class MyOrderController < ApplicationController
   private
   def check_access
     #unless current_user.admin?
-    unless user_signed_in? && current_user.admin?
+    unless user_signed_in?
+      #&& current_user.admin?
 
       #unless @User.admin.find_by(id: session[:user_id])
       redirect_to new_user_session_path, notice: "Please log in", alert: "You are not authorized to view this page"

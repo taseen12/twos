@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'video/index'
+  get 'video_tour/index'
   get 'my_order/index'
   resources :orders
   root to: "store#index"

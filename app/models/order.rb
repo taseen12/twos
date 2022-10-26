@@ -10,7 +10,7 @@ class Order < ApplicationRecord
 
 
 
-    if car.quantity >= 0
+    if car.quantity >= 0 && car.quantity - quantity >=0
 
       car.quantity = car.quantity- quantity
 
